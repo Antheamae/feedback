@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/boxicons.min.css">
+    <title>STUDENT FEEDBACK</title>
+</head>
+<body>
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/global.js"></script>
+
+    
+    <link rel="stylesheet" href="pages/landing/style_land.css">
+
+    <div class="background">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <div class="container-fluid">
+                    <div class="m-2" style="width: 100px">
+                    <img src="pages/landing/LOGO.jpg" class="img-fluid" alt="">
+                    </div>
+                    <b class="text-light navbar-brand" href="#" id="card">Student Feedback System</b>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item m-3">
+                        <a class="text-light" style="cursor: pointer;">Home</a>
+                        </li>
+                        <li class="nav-item m-3">
+                        <a class="text-light" style="cursor: pointer;">About Us</a>
+                        </li> -->
+                    </div>
+                    <a class="text-light" style="margin-left: -500px;" href="login_main.html">GET STARTED</a>
+
+
+                    <!-- <div class="nav m-2" >
+                    <b class="bg-transparent" onclick="to_user()" style="cursor: pointer;">
+                        <img src="navigation/user.png" alt=""> Account
+                    </b>
+                    </div> -->
+                </div>
+            </nav>
+        </div>
+
+        <h1 id="card">Welcome to Student Feedback System</h1>
+        <b class="card-text" id="card1"> NBSC </b>
+
+        <div class="d-flex">
+            <p id="card2">Find a way to connect with everyone on a human level</p>
+
+            <div class="card bg-#00bd35" id="card3" style="width:auto">
+                <div class="card-body bg-#00bd35 fold">
+                    <img src="pages/landing/bg1.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+        <h3 id="card4">We are the Students, and our Voice Matters.</h3>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function to_home() {
+      window.location.href = 'home_main.html';
+}  
+</script>
+
+
+<script>
+    function to_login() {
+$.post("login_main.html", {},function (data) {
+      $("#contents").html(data);  
+    });
+}   
+</script>
+
+
+
+

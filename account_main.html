@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="assets/css/boxicons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+    <title>Feedback</title>
+</head>
+<body>
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/global.js"></script>
+    <link rel="stylesheet" href="pages/account/style_acc.css">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="height: 70px;">
+        <div class="">
+            <img src="pages/home/LOGO.jpg" id="logo" class="img-fluid" alt="">
+        </div> 
+
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" id="logoname">Student Feedback System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="m-2">
+                    <a onclick="to_home()" href="home_main.html" style="text-decoration: underline;" id="homeLink">Home</a>
+                    <a onclick="to_aboutUs()" aria-current="page" id="aboutUsLink">About Us</a>
+                    <a onclick="to_contactUs()" id="contactUsLink">Contact Us</a>
+                    <!-- <a onclick="to_rateUs()" aria-current="page" id="rateUsLink">Feedback</a> -->
+
+
+
+
+
+                    <form style = "margin-left: 200px;">
+                        <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search" id="search"
+                        style = "width: 200px;">
+                    </form>
+
+
+
+
+                </div>
+            </div>
+
+            <!-- <a id="logout" href="http://localhost/Feedback/login_main.php">Log Out</a> -->
+
+            <img src="pages/home/account_icon.png" class="img-fluid" alt="">
+
+            <div class = " m-2 text-light" >   
+                <b class = "bg-transparent "  id="accountLink" onclick="to_account()" style=" cursor: pointer;"> <img src="navigation/user.png" alt="">Account</b>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="accbg">
+        <div class="container">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 bg-transparent">
+                    <div class="col-2 ">
+                        <!-- <button class="text-primary" style="width: 200px;">Profile</button> -->
+                        <button type="button" class="btn btn-primary" id="openProfileModalBtn" data-bs-toggle="modal" 
+                        data-bs-target="#modal_profile" style="width: 230px; height: 50px; margin-top: 50px;">
+                            Profile
+                        </button>
+                    </div>
+                    <div class="col-2 ">
+                        <p> </p>
+                    </div>
+                    <div class="col-2 ">
+                        <!-- <button onclick="to_back()" style="width: 200px;">Background Information</button> -->
+                    </div>
+                    <div class="col-2 ">
+                        <p> </p>
+                    </div>
+                    <div class="col-2 ">
+                    <button type="button" class="btn btn-primary" id="openSettingsModalBtn" data-bs-toggle="modal" 
+                        data-bs-target="#modal_changeyourpassword" style="width: 230px; height: 50px;">
+                            Settings
+                        </button>
+                    </div>
+                    <div class="col-2 ">
+                        <p> </p>
+                    </div>
+                    <div class="col-2 text-danger">
+                        <!-- <button class="text-danger" style="width: 200px;"><a id="logout" href="http://localhost/Feedback/login_main.php">Log Out</a></button> -->
+                        <form action="actions/logoutAction.html" method="post">
+                            <button  type="submit" id="logout" href="http://localhost/Feedback/login_main.html" class="btn btn-primary" id="openProfileModalBtn" data-bs-toggle="modal" 
+                        data-bs-target="#modal_profile" style="width: 230px; height: 50px;">
+                            Log out
+                        </button>
+                        </form>
+
+                    </div>
+                    <div class="col-2 ">
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="col-8 bg-transparent">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="m-2" style="width: 80%">
+                                <img src="assets/img/me.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <h1 class="text-light" style="width: 700px; margin-left: -30px; margin-top: 70px;">
+                                Anthea Ferraris
+                                <!-- <h1>Welcome, <php echo $firstName . ' ' . $lastName; ?></h1> -->
+                            </h1>
+
+                                
+                                
+                                
+                                
+                                
+                                <!-- <php
+
+                                    $fname = $_POST['firstname'];
+                                    $mname = $_POST['middlename'];
+                                    $lname = $_POST['lastname'];
+                                    // Assuming you have variables $firstName, $middleName, and $lastName with the data
+                                    echo $fname . ' ' . $mname . ' ' . $lname;
+                                ?> -->
+
+
+
+
+                            </h1>
+                            <p class="text-light">"Trust the Process, Everything takes Time."</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-light">
+                            <h3 class="text-light">Hobbies:</h3>
+                            <hr>
+                            <p>Singing</p>
+                            <p>Playing Guitar</p>
+                            <p>Watching Korean Movies</p>
+                            <p>Dancing</p>
+                        </div>
+                        <div class="col text-light">
+                            <h3 class="text-light">Favorites:</h3>
+                            <hr>
+                            <p>Eating Siomai</p>
+                            <p>Eating the Jollibee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+ <!-- PROFILE MODAL -->
+<div class="modal fade" id="modal_profile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Edit Profile</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+
+                    <form id="editprofile_form" method="POST" action="actions/edit_profile.html">
+
+
+                        <div class="input" id="inputfields" style="height: 330px;">
+                            <p class="sub_title_2" id="sub_title_name">Name</p>
+                            <input type="text" placeholder="Firstname" class="firstname" name="firstname" id="p_row1" value="<?php echo $firstName; ?>"/>
+                            <input type="text" placeholder="Middlename" class="middlename" name="middlename" id="p_row1" value="<?php echo $middleName; ?>" />
+                            <input type="text" placeholder="Lastname" class="lastname" name="lastname" id="p_row1" value="<?php echo $lastName; ?>" />
+
+                            <p class="sub_title_2" id="sub_title_address">Address</p>
+                            <input type="text" placeholder="Street" class="street" name="street" id="p_row2" value="<?php echo $street; ?>"/>
+                            <input type="text" placeholder="Barangay" class="barangay" name="barangay" id="p_row2" value="<?php echo $barangay; ?>" />
+
+                            <input type="text" placeholder="Municipality" class="municipality" name="municipality" id="p_row3" value="<?php echo $municipality; ?>" />
+                            <input type="text" placeholder="Province" class="province" name="province" id="p_row3" value="<?php echo $province; ?>"/>
+
+                            <input type="text" placeholder="Zipcode" class="zipcode" name="zipcode" id="p_row4" value="<?php echo $zipcode; ?>" />
+                            <input type="text" placeholder="Phone number" class="phonenumber" name="phonenumber" id="p_row4" value="<?php echo $phoneNumber; ?>" />
+
+                            <!-- <input type="date" placeholder="Birthdate" class="birthdate" name="birthdate" id="p_row5" value="<php echo $birthDate; ?>" /> -->
+
+                            <label id="sub_title_dob">Date of Birth</label>
+                            <label id="sub_title_gend">Gender</label>
+                            <div class="options">
+                                <!-- Update these lines in the profile modal -->
+                                <select class="box1" id="day" name="day">
+                                    
+                                </select>
+                                <select class="box2" id="month" name="month">
+                                    
+                                </select>
+                                <select class="box3" id="year" name="year">
+                                    
+                                </select>
+
+                                <input type="radio" id="fem" name="gender" value="Female" <?php echo ($gender === 'Female') ? 'checked' : ''; ?> required>
+                                <label for="fem">Female</label>
+                                <input type="radio" id="mal" name="gender" value="Male" <?php echo ($gender === 'Male') ? 'checked' : ''; ?> required>
+                                <label for="mal">Male</label>
+                            </div>
+
+
+                            <!-- <input type="text" placeholder="Gender" class="gender" name="gender" id="p_row5" value="<?php echo $gender; ?>" /> -->
+
+                            <!-- <p id="message" style="background: white;"></p> -->
+                        </div>
+                        <!-- <button type="submit" class="submit" name="submit" id="modalsubmit">Create account</button> ORIGINAL-->
+                        
+                        <!-- <button type="button" onclick="checkPassword()">SUBMIT</button> NEW-->
+                        
+                            <button type="submit" class="submit" name="submit" id="prof_modalsave">Save</button>
+                            <button type="button" class="btn btn-secondary" id="prof_closeModalBtn" data-bs-dismiss="modal">Close</button>
+                            <!-- <button id="closeModalBtn" data-bs-dismiss="modal">Back</button> -->
+                        
+                    </form>
+                    
+                        
+            
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <script>
+        // Function to generate options for day select
+        function generateDayOptions() {
+            var daySelect = document.getElementById("day");
+            daySelect.innerHTML = "";
+        
+            for (var i = 1; i <= 31; i++) {
+            var option = document.createElement("option");
+            option.text = i;
+            option.value = i;
+            daySelect.appendChild(option);
+            }
+        }
+        
+        // Function to generate options for month select
+        function generateMonthOptions() {
+            var monthSelect = document.getElementById("month");
+            monthSelect.innerHTML = "";
+        
+            var months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+            ];
+        
+            for (var i = 0; i < months.length; i++) {
+            var option = document.createElement("option");
+            option.text = months[i];
+            option.value = i + 1;
+            monthSelect.appendChild(option);
+            }
+        }
+        
+        // Function to generate options for year select
+        function generateYearOptions() {
+            var yearSelect = document.getElementById("year");
+            yearSelect.innerHTML = "";
+        
+            var currentYear = new Date().getFullYear();
+        
+            for (var i = currentYear; i >= 1800; i--) {
+            var option = document.createElement("option");
+            option.text = i;
+            option.value = i;
+            yearSelect.appendChild(option);
+            }
+        }
+        
+        // Call the functions to generate options
+        generateDayOptions();
+        generateMonthOptions();
+        generateYearOptions();
+    </script>
+
+
+
+
+<!-- CHANGE PASSWORD MODAL -- FOR CHANGING YOUR PASSWORD -->
+<div class="modal fade" id="modal_changeyourpassword" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Change Your Password</h5>               </div>
+                <div class="modal-body">
+                    <form id="change_password_form" method="POST" action="actions/change_password.html">
+                        <div class="input" id="inputfields" style="height: 350px;">
+
+                            <div class="row">
+                                <br>
+                                <h style="margin-top: 10px; margin-left: 83px;">Enter old password</h>
+                                <input type="password" class="oldpassword" name="oldpassword" id="cyp_row1" style="margin-top: 10px;"/>
+                                <br>
+                                <h style="margin-top: 10px; margin-left: 83px;">Enter new password</h>
+                                <input type="password" class="newpassword" name="newpassword" id="cyp_row2" style="margin-top: 10px;"/>
+                                <br>
+                                <h style="margin-top: 10px; margin-left: 83px;">Confirm new password</h>
+                                <input type="password" class="confirmnewpassword" name="confirmnewpassword" id="cyp_row3" style="margin-top: 10px;"/>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit" name="submit" id="sett_cyp_modalsave">Save</button>
+
+                        <button type="button" class="btn btn-secondary" id="sett_cyp_closeModalBtn" data-bs-dismiss="modal">Close</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        document.getElementById("sett_cyp_modalsave").addEventListener("click", function(event) {
+            //event.preventDefault(); // Prevent the form from being submitted
+
+
+            let oldPassword = document.querySelector('.oldpassword').value;
+            let newPassword = document.querySelector('.newpassword').value;
+            let confirmNewPassword = document.querySelector('.confirmnewpassword').value;
+            let password = "<?php echo $password; ?>"; // Echo the PHP variable as a JavaScript variable
+
+            if (oldPassword === password) {
+                if (newPassword.length !== 0) {
+                    if (newPassword === confirmNewPassword) {
+                        // alert("Password changed successfully");
+                        document.getElementById("change_password_form").submit();
+                    } else {
+                        event.preventDefault();
+                        alert("Passwords don't match");
+                    }
+                } else {
+                    event.preventDefault();
+                    alert("New password can't be empty");
+                }
+            } else {
+                event.preventDefault();
+                alert("Old password is incorrect");
+            }
+        });
+    </script>
+    <!-- END CHANGE PASSWORD MODAL -- FOR CHANGING YOUR PASSWORD -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <script>
+        function insertNewUser(){
+            $.post("actions/insert_new_account.html", {
+                fname: $('.firstname').val(),
+                mname: $('.middlename').val(),
+                lname: $('.lastname').val(),
+                st: $('.street').val(),
+                brgy: $('.barangay').val(),
+                mun: $('.municipality').val(),
+                prov: $('.province').val(),
+                zipc: $('.zipcode').val(),
+                pnum: $('.phonenumber').val(),
+                bdate: $('.birthdate').val(),
+                gend: $('.gender').val()
+                
+            }, function (data) {
+                if (data === "Registered Successfully!") { /*HERE*/
+                    alert(data);
+                } else {
+                    alert("Insertion failed: " + data);
+                }
+            });
+        }
+    </script>
+
+
+    <script>
+        // Function to underline a link and remove underline from others
+        function underlineLink(linkId) {
+            const links = ["homeLink", "aboutUsLink", "contactUsLink", "accountLink"];
+            for (const id of links) {
+                const link = document.getElementById(id);
+                if (id === linkId) {
+                    link.style.textDecoration = "underline";
+                } else {
+                    link.style.textDecoration = "none";
+                }
+            }
+        }
+        underlineLink("accountLink");
+
+        document.getElementById("homeLink").addEventListener("click", function() {
+            underlineLink("homeLink");
+        });
+        document.getElementById("aboutUsLink").addEventListener("click", function() {
+            underlineLink("aboutUsLink");
+        });
+        document.getElementById("contactUsLink").addEventListener("click", function() {
+            underlineLink("contactUsLink");
+        });
+    </script>
+
+</body>
+</html>
+
+<script>
+    function to_home() {
+        window.location.href = 'home_main.html';
+    }
+</script>
+
+<script>
+    function to_aboutUs() {
+        window.location.href = 'aboutus_main.html';
+    }
+</script>
+
+<script>
+    function to_contactUs() {
+        window.location.href = 'contactus_main.html';
+    }
+</script>
+
+<script>
+    function to_account() {
+        window.location.href = 'account_main.html';
+    }
+</script>
+
+<script>
+    function to_back() {
+        $.post("pages/account/back_acc.html", {},function (data) {
+            $("#nav_contents").html(data);
+        });
+    }
+</script>
+
+<script>
+    function to_nav(){
+        $.post("navigation/nav.html", {}, function (data) {
+            $("#nav_contents").html(data);
+        });
+    }
+</script>

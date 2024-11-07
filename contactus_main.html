@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/boxicons.min.css">
+    <title>Feedback</title>
+</head>
+<body>
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/global.js"></script>
+    <link rel="stylesheet" href="pages/contactUs/style_cu.css">   <!--nothing happened on this link-->
+
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="height: 70px;">
+        <div class="">
+            <img src="pages/home/LOGO.jpg" id="logo" class="img-fluid" alt="">
+        </div> 
+
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" id="logoname">Student Feedback System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="m-2">
+                    <a onclick="to_home()" href="home_main.html" style="text-decoration: underline;" id="homeLink">Home</a>
+                    <a onclick="to_aboutUs()" aria-current="page" id="aboutUsLink">About Us</a>
+                    <a onclick="to_contactUs()" id="contactUsLink">Contact Us</a>
+                    <!-- <a onclick="to_rateUs()" aria-current="page" id="rateUsLink">Feedback</a> -->
+
+
+
+
+
+                    <form style = "margin-left: 200px;">
+                        <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search" id="search"
+                        style = "width: 200px;">
+                    </form>
+
+
+
+
+                </div>
+            </div>
+
+            <!-- <a id="logout" href="http://localhost/Feedback/login_main.php">Log Out</a> -->
+
+            <img src="pages/home/account_icon.png" class="img-fluid" alt="">
+
+            <div class = " m-2 text-light" >   
+                <b class = "bg-transparent "  id="accountLink" onclick="to_account()" style=" cursor: pointer;"> <img src="navigation/user.png" alt="">Account</b>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="cu_body">
+
+     <div class="row">
+        <div class="col-2 bg-transparent">
+       
+        </div>
+        <div class="col-8 bg-transparent text-center text-light" id="cu_message">
+          <p>We value your feedback, inquiries, and suggestions.</p>
+          <p>Whether you have questions about our products or services,</p>
+          <p>need assistance with an order, or simply want to share your thoughts, we're here to help.</p>
+          <p>Please feel free to contact us through one of the following methods:</p>
+        </div>
+        <div class="col-2 bg-transparent">
+
+         
+
+
+
+
+
+
+        </div>
+     </div>
+     <hr>
+     <div class="row">
+        <div class="col-4 bg-transparent">
+       
+        </div>
+        <div class="col-4 bg-light text-center text-light" style="height: 280px; border-radius: 10px;">
+         <div class="row">
+            <div class="col-12 text-dark"><h1>Send Message</h1></div>
+           <p> </p>
+            <div class="col-6" style= "height: 70;">
+                <input type="text" placeholder="First Name" name="" id="fn">
+           </div>
+            <div class="col-6">
+                 <input type="text" placeholder="Last Name" name="" id="ln">
+                </div>
+            <p> </p>
+   
+             <div class="col-6">
+                <input type="text" placeholder="Email" name="" id="e">
+           </div>
+            <div class="col-6">
+                 <input type="text" placeholder="Feedback" name="" id="fb">
+                </div>
+         </div>
+            <p> </p>
+             <div class = "col-12">
+               <input type="text" placeholder="Message" id="m" style="width: 300; height: 70px;">
+              </div>
+              <p> </p>
+             <div class = "col-12 ">
+                <Button id="cu_sendmessage" style="width: 150px;">Send Message</Button>
+             </div>
+        </div>
+        <div class="col-4 bg-transparent">
+
+        </div>
+     </div>
+
+</div>
+</div>
+
+</div>
+
+
+    <script>
+        // Function to underline a link and remove underline from others
+        function underlineLink(linkId) {
+            const links = ["homeLink", "aboutUsLink", "contactUsLink", "rateUsLink"];
+
+            for (const id of links) {
+                const link = document.getElementById(id);
+                if (id === linkId) {
+                    link.style.textDecoration = "underline";
+                } else {
+                    link.style.textDecoration = "none";
+                }
+            }
+        }
+
+        underlineLink("contactUsLink");
+
+        document.getElementById("homeLink").addEventListener("click", function() {
+            underlineLink("homeLink");
+        });
+
+        document.getElementById("aboutUsLink").addEventListener("click", function() {
+            underlineLink("aboutUsLink");
+        });
+
+        document.getElementById("rateUsLink").addEventListener("click", function() {
+            underlineLink("rateUsLink");
+        });
+    </script>
+</body>
+</html>
+
+<script>
+    function to_navigation() {
+$.post("pages/nav/nav.html", {},function (data) {
+      $("#contents").html(data);  
+    });
+}  
+</script>
+
+<script>
+    function to_home() {
+      window.location.href = 'home_main.html';
+}  
+</script>
+
+<script>
+    function to_aboutUs() {
+      window.location.href = 'aboutus_main.html';
+}  
+</script>
+
+
+<script>
+    function to_contactUs() {
+      window.location.href = 'contactus_main.html';
+}  
+</script>
+
+
+<script>
+    function to_account() {
+      window.location.href = 'account_main.html';
+    }
+</script>
+
+
+<script>
+    function to_login() {
+$.post("login_main.html", {},function (data) {
+      $("#contents").html(data);  
+    });
+}   
+</script>
+

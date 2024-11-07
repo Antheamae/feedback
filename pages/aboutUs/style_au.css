@@ -1,0 +1,136 @@
+#logo {
+  position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: -25px;
+}
+
+#logoname{
+  /* position: absolute; */
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 70px;
+}
+
+
+#homeLink{
+  display: flex;
+  position: absolute;
+
+  font-size: 18px;
+  cursor: pointer;
+  color: rgb(228, 226, 226);
+  margin-left: 2cm;
+}
+
+#aboutUsLink{
+  display: flex;
+  position: absolute;
+
+  font-size: 18px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  margin-left: 5cm;
+}
+
+#contactUsLink{
+  display: flex;
+  position: absolute;
+
+  font-size: 18px;
+  cursor: pointer;
+  color: rgb(228, 226, 226);
+  margin-left: 8.7cm;
+}
+
+#accountLink{
+  /* display: flex;
+  position: absolute;
+
+  font-size: 18px; */
+  cursor: pointer;
+  color: rgb(228, 226, 226);
+  /* margin-left: 12.9cm; */
+}
+
+
+/*DON'T INCLUDE ABOUTUS IN HOVER*/
+#homeLink:hover{ 
+  /*background-color: #3695fb;*/
+  color: rgb(255, 255, 255);
+  /* border-radius: 3px;
+  font-size: 20px; */
+  background-color:#3695fb;
+  /* margin-top: -2.5px;
+  margin-left: 1.95cm; */
+}
+#contactUsLink:hover{
+  /*background-color: #3695fb;*/
+  color: rgb(255, 255, 255);
+  /* border-radius: 3px;
+  font-size: 20px; */
+  background-color:#3695fb;
+  /* margin-top: -2.5px;
+  margin-left: 8.6cm; */
+}
+#accountLink:hover{
+  /*background-color: #3695fb;*/
+  color: rgb(255, 255, 255);
+  /* border-radius: 3px;
+  font-size: 20px; */
+  background-color:#3695fb;
+  /* margin-top: -2.5px;
+  margin-left: 12.8cm; */
+}
+
+
+#search{
+  width: 300px;
+  margin-left: 300px;
+}
+
+
+
+
+
+
+
+
+
+#logout{
+  width: 80px;
+  color: white;
+  text-align: center;
+  border: 1px solid white;
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+#logout:hover{
+    background-color: #045dbd; /*#248eff*/
+    border-radius: 3px;
+  }
+  
+
+
+
+
+  .body{
+    width: 100x;
+    height: 100vh;
+    background-image: url('img.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    margin-top: -20px;
+  }
+  
+  
+
+  #au_body{
+    margin-top: -20px;
+  }

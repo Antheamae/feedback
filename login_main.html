@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="assets/css/boxicons.min.css">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>STUDENT FEEDBACK - Login</title>
+</head>
+<body>
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/global.js"></script>
+    <link rel="stylesheet" href="pages/login/style_L.css">
+
+    <div class="background"></div>
+    
+    
+    
+    <div class="body">
+    <a id="back" href="landing_main.html">Back</a>
+        <div class="container">
+            <label class="login">Log In</label>
+            <div class="login-container">
+                <form action="Feedback/home_main.html" method="POST" id="login_form">
+                    <div class="entryarea">
+                        <input type="text" id="email" class="form-control" name="email" required>
+                        <p for="email">Email</p>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="entryarea">
+                        <input type="password" id="password" class="form-control" name="password" required>
+                        <p for="password">Password</p>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+                    <div class="remember-forgot">
+                        <input type="checkbox" id="checkbox">
+                        <span id="rm">Remember me</span>
+                        <a onclick="to_forgotpassword()">Forgot password?</a>
+                    </div>
+                    <a href="home_main.html" type="submit" name="submit" class="submit">Login</a>
+                </form>
+                <div class="register-link">
+                    
+                    <p>Don't have an account?</p>
+                    <!-- <button onclick="to_regis()" style="width: 150px; background-color: white; color: black; border-radius: 40px;">Create one</button> -->
+                    
+                    </html><!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" id="openModalBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Create an account
+                    </button>
+
+                </div>
+                <!-- <div id="contents"></div> THE REASON WHY LOGIN APPEARS ON LANDING OR LOGIN IS BROKEN-->
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">User Registration</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+
+                    <form id="registration_form" method="POST" action="actions/insert_new_account.html">
+                        <div class="input" id="inputfields" style="height: 240px;">
+                            <input type="text" placeholder="Firstname" class="firstname" name="firstname" id="row1"/>
+                            <input type="text" placeholder="Lastname" class="lastname" name="lastname" id="row1" />
+                            <input type="text" placeholder="Email" class="email" name="email" id="row2" /> 
+                            <input type="text" placeholder="Password" class="password" name="password" id="row3"/> 
+                            <input type="text" placeholder="Confirm Password" class="confirmpassword" name="confirmpassword" id="row4" /> 
+                            <!-- <p id="message" style="background: white;"></p> -->
+                        </div>
+                        <hr>
+                        <div class="boxandlink">
+                            <input type="checkbox" id="privacy-checkbox" name="privacy-checkbox" >
+                            <label for="privacy-checkbox" id="privacy-link">I already read and understand the <a href="privacy_details_main.html">privacy details</a>.</label>
+                        </div>
+                        <!-- <button type="submit" class="submit" name="submit" id="modalsubmit">Create account</button> ORIGINAL-->
+                        
+                        <!-- <button type="button" onclick="checkPassword()">SUBMIT</button> NEW-->
+                        
+                            <a href="home_main.html" type="submit" class="submit" name="submit" id="modalsubmit">Create</a>
+                            <button type="button" class="btn btn-secondary" id="closeModalBtn" data-bs-dismiss="modal">Close</button>
+                            <!-- <button id="closeModalBtn" data-bs-dismiss="modal">Back</button> -->
+                        
+                    </form>
+                    
+                        
+            
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+
+
+    
+<!-- 
+    <script>
+        // Function to open the registration modal
+        document.getElementById("openModalBtn").addEventListener("click", function() {
+            var modal = document.getElementById("registrationModal");
+            modal.style.display = "block";
+        });
+        // Function to close the registration modal
+        document.getElementById("closeModalBtn").addEventListener("click", function() {
+            var modal = document.getElementById("registrationModal");
+            modal.style.display = "none";
+        });
+    </script> -->
+
+
+    
+    <script>
+        
+        function checkPassword(event) {
+
+            let password = document.getElementById("row3").value;
+            let cnfrmPassword = document.getElementById("row4").value;
+            console.log(password, cnfrmPassword);
+            let message = document.getElementById("message");
+
+            if (password.length !== 0) {
+                if (password === cnfrmPassword) {
+                    // message.textContent = "Passwords match";
+                    // alert("Passwords match");
+
+                    // If passwords match, you can manually submit the form here:
+                     document.getElementById("registration_form").submit();
+
+                     
+                } else {
+                    event.preventDefault(); // Prevent the form from submitting
+                    // message.textContent = "Passwords don't match";
+                    alert("Passwords don't match");
+                }
+            } else {
+                event.preventDefault(); // Prevent the form from submitting
+                alert("Password can't be empty!");
+                message.textContent = "";
+            }
+        }
+
+    </script>
+
+
+
+
+
+
+    <!-- <script>
+        function insertNewUser(){
+            $.post("actions/insert_new_account.php", {
+                fname: $('.firstname').val(),
+                lname: $('.lastname').val(),
+                eml: $('.email').val(),
+                pword: $('.password').val(),
+                conpw: $('.confirmpassword').val()
+            }, function (data) {
+                if (data === "Registered Successfully!") { /*HERE*/
+                    alert(data);
+                } else {
+                    alert("Insertion failed: " + data);
+                }
+            });
+        }
+        $('#login_form').submit(function(e){
+            e.preventDefault();
+            $.post("actions/loginAction.php", {
+                email: $('#email').val(),
+                password: $('#password').val()
+            },
+            function(data){
+                if(data==="Login Successfully!"){
+                    window.location.href = 'home_main.php';
+                }else{}
+                alert(data)
+            }
+            );
+        });
+    </script> -->
+
+
+
+
+    <script>
+        $('#login_form').submit(function(e){
+            e.preventDefault();
+            $.post("actions/loginAction.html", {
+                email: $('#email').val(),
+                password: $('#password').val()
+            },
+            function(data){
+                try {
+                    var response = JSON.parse(data);
+                    if(response.status === "success"){
+                        if(response.role === "admin"){
+                            alert("Logged in Successfully as Admin!");
+                            setTimeout(function() {
+                                window.location.href = 'admin_main.html';
+                            }, 500); // Delay the redirect by 500 milliseconds
+                        } else if(response.role === "student"){
+                            alert("Logged in Successfully as Student!");
+                            setTimeout(function() {
+                                window.location.href = 'home_main.html';
+                            }, 500); // Delay the redirect by 500 milliseconds
+                        }
+                    } else {
+                        alert("Login failed: " + response.message);
+                    }
+                } catch (error) {
+                    console.error("Error parsing JSON response:", error);
+                }
+            }).fail(function(xhr, status, error) {
+                console.error("AJAX Request Failed:", status, error);
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- MODAL FADEIN -->
+<script>
+document.getElementById('openModalBtn').addEventListener('click', function() {
+    document.getElementById('registrationModal').style.display = 'block';
+
+    // Add a class to trigger the fade-in effect
+    document.getElementById('registrationModal').classList.add('fade-in');
+});
+
+document.getElementById('closeModalBtn').addEventListener('click', function() {
+    document.getElementById('registrationModal').style.display = 'none';
+
+    // Remove the fade-in class to reset the effect
+    document.getElementById('registrationModal').classList.remove('fade-in');
+});
+</script>
+
+
+
+
+
+
+    <script>
+        function to_regis() {
+            window.location.href = '/Feedback/registration_main.html';
+        }
+    </script>
+    <script>
+        function to_home() {
+            $.post("home_main.html", {}, function (data) {
+                $("#contents").html(data);  
+            });
+        }
+    </script>
+    <script>
+        function to_forgotpassword() {
+            window.location.href = '/Feedback/forgot_password_main.html';
+        }
+    </script>
+</body>
+</html>
